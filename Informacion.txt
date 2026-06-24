@@ -1,0 +1,363 @@
+PORTFOLIO WEB — Documento de referencia
+
+Álvaro Gómez Expósito · Actualizado: junio 2026
+
+1. INFORMACIÓN DEL PROYECTO
+
+Nombre: Álvaro Gómez Expósito
+Tipo de web: Portfolio personal multidisciplinar
+Disciplinas: Generalista 3D · Modelado orgánico · VFX · Producción audiovisual
+Ubicación archivos: Escritorio → ProyectosPropios → PGWeb
+Editor: Visual Studio Code + extensión Live Server
+Agente IA: Claude Code (extensión VS Code, v2.1.177)
+Idiomas: Bilingüe ES / EN (toggle en nav + botón dentro del modal de proyecto)
+Tecnología: HTML + CSS + JS puro (sin frameworks)
+
+
+2. ESTRUCTURA DE PÁGINAS
+
+index.html    → Inicio: hero con animación + slideshow de proyectos, trabajos recientes (3 primeros proyectos con imagen real)
+projects.html → Galería: lista cinemática con filtros y modal lightbox
+skills.html   → Habilidades: cards con barras animadas y stack completo
+about.html    → Sobre mí: bio, foto, timeline "Experiencia y Formación" y CV descargable
+contact.html  → Contacto: formulario + links a redes y CV
+
+Archivos principales: css/style.css · js/main.js · js/layout.js (nav y footer compartidos)
+
+
+3. DISEÑO VISUAL
+
+Tipografías:
+  Bebas Neue       → títulos grandes (h1, hero, proyectos)
+  Cormorant Garamond → subtítulos, etiquetas, filtros
+  Raleway          → texto corriente, menú, párrafos
+
+Color de acento por página (variable CSS --accent, definida en bloque style en el head de cada HTML):
+  index.html    → Ámbar oscuro      #c8832a
+  projects.html → Arena dorada      #c9a87c
+  skills.html   → Violeta           #9b59b6
+  about.html    → Verde esmeralda   #00c896
+  contact.html  → Azul eléctrico    #4a9eff
+
+Otros tokens de color:
+  Fondo base:      #0a0a0a
+  Fondo cards:     #141414
+  Texto principal: #e8e0d0 (blanco hueso)
+  Texto secundario:#888888
+  Bordes / líneas: #1e1e1e
+
+
+4. FUNCIONALIDADES IMPLEMENTADAS
+
+Navegación entre páginas con nav fijo y menú hamburguesa en móvil
+Toggle de idioma ES / EN con persistencia en localStorage — todas las secciones traducidas
+Filtros de proyectos por categoría (3D, Arte digital, Games)
+Modal lightbox para ver proyectos en detalle (soporta imagen, galería, vídeo e iframe YouTube)
+  - Galería con flechas ‹ › y contador X / N dentro del modal
+  - Botón de idioma ES/EN dentro del modal (cambia título, categoría y descripción)
+  - Clic en imagen del modal → visor a pantalla completa
+  - En pantalla completa: flechas ‹ ›, contador, teclas ← → y Escape
+  - Sincronización de índice entre modal y pantalla completa
+  - Soporte de vídeos YouTube: iframes con autoplay y control de volumen vía postMessage
+  - Control de volumen por elemento en data-gallery: sufijo |vol:0.85 (escala 0–1)
+Auto-apertura de modal desde URL: projects.html?open=N abre el proyecto en posición N (0-based)
+  - La URL se limpia tras abrir el modal (history.replaceState)
+  - Usado por los trabajos recientes de index.html para enlazar al proyecto correcto
+Portadas de proyectos: brightness(0.80) en reposo, brightness(0.60) en hover
+Subtítulos de proyectos en color Arena dorada #c9a87c para mayor visibilidad (inline style)
+Barras de habilidades animadas al hacer scroll
+Niveles de habilidad estandarizados: Básico 30% · Intermedio 50% · Intermedio-Avanzado 60% · Avanzado 85% · Muy Avanzado 95%
+Logos reales de programas en skill cards desde assets/img/logos/
+Formulario de contacto con mensaje de éxito (sin backend real aún)
+Footer compartido inyectado via js/layout.js — links correctos: ArtStation · GitHub · LinkedIn
+Links del footer: alvatrom.artstation.com · github.com/Alvatrom · linkedin.com/in/alvaro-gomez-exposito-3d
+Indicador de disponibilidad (punto verde animado) en contact.html
+Responsive: adaptado a móvil y tablet (hero visual oculto en <900px)
+Botón de cerrar modal (✕) en color gris azulado frío #b0c4d8 para mayor visibilidad
+
+
+5. PROYECTOS EN projects.html  (orden actual)
+
+Proyecto 1 — Exposición de Vivienda · Corona Renderer  (3D / Arquitectura)
+  Carpeta: assets/img/exposicion-vivienda/
+  Galería (6 imgs): Artstation, Artstation2, ArtstationHamacasReducido,
+                    MuestraPorche5, ArtstationJardin, ArtstationPiscina
+  Subtítulo: Visualización arquitectónica · 3ds Max · Corona Renderer (#c9a87c)
+  Bilingüe: data-desc + data-desc-en / data-title-en / data-cat-en
+
+Proyecto 2 — Nuka-Cola: Holiday Spirit Never Ends  (Arte Digital / Fan Art)
+  Carpeta img: assets/img/nuka-cola/
+  Miniatura: PruebaPortada.jpg (con fondo desenfocado, object-fit:contain)
+  Galería (11 elementos + 2 YouTube):
+    1. YouTube: VideoFinalCompletoSinAOVs (https://www.youtube.com/embed/8iklpx8p0uQ) vol:0.85
+    2–9. QuantumFoto · Quartz · Dark · Orange · Cherry · Victory · Grape · Wild
+    10. FotoBotella.jpg
+    11. PruebaPortada.jpg
+    12. YouTube: FinalbotellaYoutube (https://www.youtube.com/embed/AIykxyigyug) vol:0.7
+    13. YouTube: VideoFinalSimulacion (https://www.youtube.com/embed/ngqnVsMbMiE) vol:0.7
+  Subtítulo: 3ds Max · Arnold Renderer · TyFlow · ZBrush · After Effects (#c9a87c)
+  Bilingüe: data-desc + data-desc-en / data-title-en / data-cat-en
+
+Proyecto 3 — Anuncio Educativo ESCALA  (3D / Motion)
+  Carpeta: assets/img/escala-anuncio/
+  Miniatura: MiniaturaYoutube.png (con fondo desenfocado, object-fit:contain)
+  Galería (9 imgs + 1 YouTube): RenderPrincipalMejorado, RenderArbustos, Columnas,
+                    RenderCables, ExplosionInicio, ExplosionParticulas, Explosion2,
+                    EdificioProcedural, AssetsEdificio,
+                    YouTube: https://www.youtube.com/embed/EIJ1bnA1PxU (último)
+  Bilingüe: data-desc + data-desc-en / data-title-en / data-cat-en
+
+Proyecto 4 — Dettlaff van der Eretein — Fan Art  (Arte Digital / Fan Art)
+  Carpeta img: assets/img/dettlaff-fanart/
+  Galería (3 imgs + 1 YouTube): render_Viewport_001, render_Viewport_002,
+                               ReferenciasVampiro,
+                               YouTube: https://www.youtube.com/embed/7g_-AkyrFR0 (último)
+  The Witcher 3: Blood and Wine · referencia: busto de Marcin Blaszczak
+  Bilingüe: data-desc + data-desc-en / data-title-en / data-cat-en
+
+Proyecto 5 — Anuncio Conceptual Canon  (3D / Motion)
+  Carpeta img: assets/img/anuncio-canon/
+  Galería (4 imgs + 1 YouTube): alvaro-gomez-1mejora, alvaro-gomez-2mejora,
+                               alvaro-gomez-3mejora, alvaro-gomez-4mejora,
+                               YouTube: https://www.youtube.com/embed/QZ66ig0SeUM (último)
+  tyFlow · cloth simulation · Canon F-1 de Sketchfab (autor: Miguel Adão)
+  Bilingüe: data-desc + data-desc-en / data-title-en / data-cat-en
+
+
+6. INICIO — HERO SLIDESHOW (index.html, columna derecha)
+
+El hero de index.html muestra en la columna derecha un slideshow automático que cicla por los
+5 proyectos del portfolio. Implementado como <a id="heroSlideLink"> con clase hero__img-wrap
+y hero__slideshow. Controlado por initHeroSlideshow() en js/main.js.
+
+Comportamiento:
+  - Cada slide se muestra 5 segundos (DURATION = 5000 ms) con transición crossfade (opacity 0.8s)
+  - Clic en la imagen → navega a projects.html?open=N (abre el modal del proyecto mostrado)
+  - El href del enlace se actualiza dinámicamente con cada cambio de slide
+  - Pausa al pasar el cursor encima (mouseenter): congela la barra de progreso en su posición exacta
+  - Reanuda desde donde se dejó al retirar el cursor (mouseleave), sin reiniciar
+  - Puntos de navegación (dots) en la esquina inferior derecha: clic para saltar a cualquier slide
+  - Barra de progreso dorada (2px) en la parte inferior: se llena linealmente en 5 s
+  - Caption en la parte inferior: muestra categoría (acento dorado) y nombre del proyecto
+  - Caption bilingüe: se actualiza automáticamente al cambiar idioma ES/EN
+  - En móvil (<900px) el hero visual está oculto (display:none); el slideshow no afecta
+
+Slides (en orden):
+  Slide 1 — Exposición de Vivienda  →  projects.html?open=0
+    img:    assets/img/exposicion-vivienda/Artstation.png
+    modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
+    cat ES/EN: 3D / Arquitectura · 3D / Architecture
+
+  Slide 2 — Nuka-Cola: Holiday Spirit Never Ends  →  projects.html?open=1
+    img:    assets/img/nuka-cola/PruebaPortada.jpg  (archivo nº 11 de la galería)
+    modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
+    cat ES/EN: Arte Digital / Fan Art · Digital Art / Fan Art
+
+  Slide 3 — Anuncio Educativo ESCALA  →  projects.html?open=2
+    img:    assets/img/escala-anuncio/MiniaturaYoutube.png
+    modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
+    cat ES/EN: 3D / Motion · 3D / Motion
+
+  Slide 4 — Dettlaff — Fan Art  →  projects.html?open=3
+    img:    assets/img/dettlaff-fanart/render_Viewport_001.png
+    modo:   object-fit:cover (sin espacios vacíos, sin blur)
+    cat ES/EN: Arte Digital / Fan Art · Digital Art / Fan Art
+
+  Slide 5 — Anuncio Conceptual Canon  →  projects.html?open=4
+    img:    assets/img/anuncio-canon/alvaro-gomez-4mejora.jpg  (archivo nº 4 de la galería)
+    modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
+    cat ES/EN: 3D / Motion · 3D / Motion
+
+Tamaños de texto del caption (sin cambiar font):
+  Categoría (font-mono):   font-size: 1rem
+  Nombre (font-display):   font-size: 2rem
+
+Nota técnica sobre el blur: los slides con object-fit:contain tienen un div.hero__slide-blur
+(position:absolute, inset:0, filter:blur(18px) brightness(0.35)) que rellena los espacios
+vacíos. El img necesita position:relative para pintarse encima del blur en el orden de capas CSS.
+
+
+7. INICIO — SECCIÓN TRABAJOS RECIENTES (index.html)
+
+Muestra los 3 primeros proyectos de projects.html con imagen real de portada.
+Cada tarjeta enlaza a projects.html?open=N (N = posición 0-based) para abrir el modal directo.
+
+  Tarjeta 1 → Exposición de Vivienda
+    img: assets/img/exposicion-vivienda/Artstation.png  (object-fit:cover)
+    href: projects.html?open=0
+
+  Tarjeta 2 → Nuka-Cola: Holiday Spirit Never Ends
+    img: assets/img/nuka-cola/PruebaPortada.jpg  (fondo blur + object-fit:contain)
+    href: projects.html?open=1
+
+  Tarjeta 3 → Anuncio Educativo ESCALA
+    img: assets/img/escala-anuncio/MiniaturaYoutube.png  (fondo blur + object-fit:contain)
+    href: projects.html?open=2
+
+
+8. INICIO — STATS DEL HERO (index.html)
+
+  20+   Proyectos
+  3+    Años exp.
+  10+   Herramientas
+
+
+9. ESTRUCTURA DE ASSETS
+
+assets/
+├── img/
+│   ├── exposicion-vivienda/   (6 imágenes .png)
+│   ├── escala-anuncio/        (10 archivos: 9 galería + 1 miniatura YouTube)
+│   ├── anuncio-canon/         (4 imágenes .jpg)
+│   ├── dettlaff-fanart/       (3 imágenes .png: 2 renders + hoja de referencias)
+│   ├── nuka-cola/             (10 imágenes .jpg: QuantumFoto, Quartz, Dark, Orange,
+│   │                           Cherry, Victory, Grape, Wild, FotoBotella, PruebaPortada)
+│   ├── me/                    (foto personal: alvaro nuevo.jpg)
+│   └── logos/                 (logos de programas con fondo transparente, .png y .webp)
+│                              tyflow_icon, zbrush_icon, Unity_Logo → clase logo-white (filtro blanco)
+├── videos/
+│   ├── escala-anuncio/        LetrasBlancas.mp4 (archivo local; en web se usa YouTube embed)
+│   ├── anuncio-canon/         ComposicionFinalPresentacion.mp4 (archivo local; en web se usa YouTube embed)
+│   ├── dettlaff-fanart/       video_Turn_Final.mp4 (archivo local; en web se usa YouTube embed)
+│   └── nuka-cola/             VideoFinalCompletoSinAOVs.mov · FinalbotellaYoutube.mov ·
+│                              VideoFinalSimulacion.mov (archivos locales; en web se usan YouTube)
+└── documents/
+    └── CV/                    CV_ALVARO_GOMEZ_2026.pdf ✓
+
+Para añadir imágenes a un proyecto:
+1. Colocar los archivos PNG/JPG en su carpeta correspondiente (assets/img/<proyecto>/)
+2. Los vídeos van en assets/videos/<proyecto>/ o como enlaces YouTube embed
+3. Añadir data-img="ruta" y data-gallery="ruta1,ruta2,..." al div .project-item
+4. Para YouTube: usar URL https://www.youtube.com/embed/VIDEO_ID (con |vol:0.X opcional)
+5. Para miniatura con fondo desenfocado: añadir div.hero__slide-blur + img con object-fit:contain + position:relative
+
+
+10. SECCIONES DE HABILIDADES EN skills.html
+
+Orden de secciones: Modelado · Texturizado · Animación · Renderizado · FX/Simulación · Postproducción · Motores de Juego · Lenguajes · Todo el stack
+
+Modelado:      3ds Max (Avanzado) · ZBrush (Intermedio) · Blender (Básico) · Maya (Básico) · RizomUV (Intermedio) · TopoGun (Básico)
+Texturizado:   Substance 3D Painter (Intermedio) · Photoshop (Básico)
+Animación:     3ds Max (Avanzado) · Unity (Intermedio)
+Renderizado:   Arnold Renderer (Avanzado) · Corona Renderer (Intermedio) · Marmoset Toolbag (Básico)
+FX/Simulación: tyFlow (Avanzado)
+Postproducción:After Effects (Avanzado) · Photoshop (Intermedio)
+Motores Juego: Unity (Intermedio-Avanzado) · Godot (Básico) · Version Control (Intermedio)
+Lenguajes:     C# (Intermedio) · GDScript (Básico)
+
+Escala de barras: Básico 30% · Intermedio 50% · Intermedio-Avanzado 60% · Avanzado 85% · Muy Avanzado 95%
+
+
+11. CONTACTO Y REDES SOCIALES
+
+Email:      alvarogomez0402@gmail.com
+LinkedIn:   linkedin.com/in/alvaro-gomez-exposito-3d
+ArtStation: alvatrom.artstation.com
+GitHub:     github.com/Alvatrom
+CV:         assets/documents/CV/CV_ALVARO_GOMEZ_2026.pdf
+
+Estos mismos enlaces están en el footer (js/layout.js) y en contact.html.
+
+
+12. SISTEMA DE TRADUCCIÓN ES/EN
+
+Todas las secciones están completamente preparadas para traducción mediante data-i18n.
+El objeto TRANSLATIONS en js/main.js contiene las claves para ES y EN.
+
+Claves por sección:
+  nav.*          → Navegación
+  hero.*         → Hero y trabajos recientes de inicio
+  projects.*     → Cabecera de galería y filtros (filter.*)
+  skills.*       → Cabecera y categorías de habilidades (skill.cat.* · skill.level.*)
+  about.*        → Sobre mí completo:
+    about.p1/p2/p3        → Párrafos bio
+    about.exp             → "Experiencia y Formación" / "Experience & Education"
+    about.exp.r1/r2/r3    → Roles del timeline
+    about.exp.c1/c2/c3    → Empresas/centros del timeline
+    about.interests       → "Intereses" / "Interests"
+    about.tag.emulation   → "PS3 / Emulación" / "PS3 / Emulation"
+    about.tag.audio       → "Síntesis de audio" / "Audio Synthesis"
+    about.cv              → Botón descargar CV
+  contact.*      → Contacto completo:
+    contact.eyebrow/title/sub  → Cabecera
+    contact.name/email/msg     → Labels del formulario
+    contact.email.placeholder  → "tu@email.com" / "your@email.com"
+    contact.send/success       → Botón y mensaje de éxito
+    contact.cv.val             → "Descargar CV (PDF)" / "Download CV (PDF)"
+    contact.availability       → "Disponibilidad" / "Availability"
+    contact.available          → "Disponible para proyectos" / "Available for projects"
+  footer.copy    → Copyright
+
+Bilingüismo en modal de proyecto: atributos data-title-en, data-desc-en, data-cat-en en cada .project-item
+Bilingüismo en slideshow hero: PROJECTS[] en initHeroSlideshow() contiene cat/catEn y name/nameEn
+
+
+13. ABOUT — TIMELINE "EXPERIENCIA Y FORMACIÓN"
+
+  2026       Desarrollo de Juego 2D en GODOT · Outlander Games
+  2025       Desarrollo completo de anuncio publicitario · Escuela de formación laboral (ESCALA)
+  2023–2025  Ciclo Formativo de Grado Superior — Animaciones 3D, Juegos y Entornos Interactivos · UDIT
+
+
+14. ESTADO ACTUAL
+
+Completado:
+  ✓ Estructura completa de 5 páginas
+  ✓ Tipografías: Bebas Neue + Cormorant Garamond + Raleway
+  ✓ Colores de acento por sección aplicados
+  ✓ 5 proyectos completos en galería con imágenes reales, galería funcional y bilingüismo
+  ✓ Sistema de galería con slider, zoom a pantalla completa y navegación por teclado
+  ✓ Soporte de vídeo (mp4) e iframes YouTube con control de volumen
+  ✓ Todos los vídeos de todos los proyectos servidos como YouTube embed (no archivos locales)
+  ✓ Visor fullscreen: al navegar con flechas a un vídeo, el zoom se desactiva automáticamente
+      y el vídeo se reproduce en el modal (evita que el iframe aparezca diminuto en el overlay)
+  ✓ Corrección bug doble reproducción: renderGallery acepta parámetro autoplay (default true);
+      cuando se llama desde navegación fullscreen se pasa false para no reproducir en el modal
+  ✓ Toggle de idioma dentro del modal (ES/EN por proyecto)
+  ✓ Orden de proyectos: Vivienda · Nuka-Cola · ESCALA · Dettlaff · Canon
+  ✓ Hero slideshow en index.html: 5 proyectos con ciclo automático de 5s, crossfade, barra de progreso,
+      dots de navegación, pausa/reanudación en hover, enlace al proyecto visible, caption bilingüe
+  ✓ Trabajos recientes de index.html con imágenes reales y enlaces directos a modal (projects.html?open=N)
+  ✓ Footer con links correctos: ArtStation · GitHub · LinkedIn
+  ✓ Foto personal en about.html
+  ✓ Timeline "Experiencia y Formación" actualizado (Outlander Games · ESCALA · UDIT)
+  ✓ Sección skills.html: 8 categorías, barras estandarizadas por nivel
+  ✓ CV funcional: assets/documents/CV/CV_ALVARO_GOMEZ_2026.pdf (enlace correcto en index.html y contact.html)
+  ✓ Stat "Herramientas" actualizado a 10+
+  ✓ Traducciones ES/EN completas en todas las secciones
+
+Pendiente:
+  ▸ Integrar formulario de contacto con servicio real (Formspree / Web3Forms)
+  ▸ Subir a Netlify / dominio propio
+
+
+15. CÓMO RETOMAR EL TRABAJO
+
+Abrir VS Code → la carpeta PGWeb se carga automáticamente
+Clic derecho sobre index.html → Open with Live Server
+En la terminal escribir: claude
+Compartir este documento con Claude como contexto inicial
+
+Para identificar elementos en el navegador: pulsar F12 → icono de cursor → clic sobre el elemento → ver nombre de clase en el panel.
+
+
+16. NOTAS TÉCNICAS
+
+Google Fonts cargadas: Bebas Neue, Cormorant Garamond (300, 400, italic), Raleway (300, 400, 500)
+Variables CSS principales: --accent, --accent-dim, --bg, --bg-card, --text, --muted
+Acento por página: bloque style en head de cada HTML sobreescribe --accent
+Layout compartido: js/layout.js inyecta nav y footer en todos los HTML
+Traducciones: objeto TRANSLATIONS en js/main.js, atributo data-i18n en HTML
+Auto-apertura de modal: projects.html?open=N → abre proyecto índice N; URL se limpia con history.replaceState
+Galería de imágenes: atributo data-gallery con rutas separadas por coma
+  - Vídeos HTML5 (.mp4/.webm): se renderizan como <video autoplay muted loop playsinline>
+  - Vídeos YouTube: URL https://www.youtube.com/embed/ID → se renderizan como <iframe>
+  - Control de volumen: sufijo |vol:0.85 en la ruta (YouTube via postMessage, HTML5 via .volume)
+Miniatura con fondo desenfocado: div.hero__slide-blur (position:absolute, filter:blur(18px) brightness(0.35))
+  + img con object-fit:contain y position:relative (position:relative es obligatorio para que el img
+  quede por encima del blur en el orden de capas CSS; sin él el blur tapa la imagen)
+Hero slideshow: función initHeroSlideshow() en js/main.js; window._heroSlideshowUpdateLang() para
+  actualizar el caption al cambiar idioma; usa setTimeout (no setInterval) para poder reanudar
+  desde el tiempo exacto tras un hover
+About page: columna foto 0.6fr · aspect-ratio 3/3.5 · textos 1.1rem / 1.18rem · timeline ampliado
+Hosting recomendado: Netlify Drop (gratis) + dominio .com o .art (~10€/año)

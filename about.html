@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí — Álvaro Gómez Expósito</title>
+  <meta name="description" content="Álvaro Gómez Expósito, artista 3D generalista y desarrollador de videojuegos indie basado en España.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --accent:     #00c896;
+      --accent-dim: rgba(0,200,150,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page about-page">
+    <div class="container">
+
+      <div class="section-eyebrow">
+        <span class="t-label" data-i18n="about.eyebrow">Quién soy</span>
+      </div>
+      <h1 class="t-h1 fade-up" data-i18n="about.title">Sobre mí</h1>
+
+      <div class="about-grid" style="margin-top:3rem;">
+
+        <!-- Photo column -->
+        <div class="about__photo-wrap fade-up">
+          <div class="about__photo">
+            <img src="assets/img/me/alvaro nuevo.jpg" alt="Álvaro Gómez Expósito" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          </div>
+          <p class="about__photo-caption">Álvaro Gómez Expósito · España</p>
+
+          <div style="margin-top:1.75rem;">
+            <a href="assets/cv-alvaro-garcia.pdf" class="btn btn--outline" download data-i18n="about.cv" style="width:100%;justify-content:center;">
+              ↓ Descargar CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about__text fade-up delay-1">
+          <p data-i18n="about.p1">
+            Soy Álvaro Gómez Expósito, generalista 3D con base en España.
+          </p>
+          <p data-i18n="about.p2">
+            Mi trabajo abarca el modelado orgánico, la creación de efectos visuales y la producción audiovisual. Domino herramientas de modelado, texturizado y renderizado, así como Unity, lo que me permite abordar distintas fases del pipeline de producción 3D con autonomía y criterio creativo.
+          </p>
+          <p data-i18n="about.p3">
+            Me caracterizo por la creatividad y la capacidad de llevar un proyecto desde la fase de concepto hasta el resultado final. Estoy en constante aprendizaje, buscando siempre mejorar procesos y metodologías para obtener los mejores resultados en cada producción.
+          </p>
+
+          <div class="about__divider"></div>
+
+          <!-- Experience timeline -->
+          <div style="margin-bottom:1rem;">
+            <div class="section-eyebrow" style="margin-bottom:1.25rem;">
+              <span class="t-label" data-i18n="about.exp">Experiencia</span>
+            </div>
+          </div>
+
+          <div class="timeline">
+
+            <div class="timeline__item">
+              <div class="timeline__year">2026 —</div>
+              <div>
+                <div class="timeline__role" data-i18n="about.exp.r1">Desarrollo de Juego 2D en GODOT</div>
+                <div class="timeline__company" data-i18n="about.exp.c1">Outlander Games</div>
+              </div>
+            </div>
+
+            <div class="timeline__item">
+              <div class="timeline__year">2025 —</div>
+              <div>
+                <div class="timeline__role" data-i18n="about.exp.r2">Desarrollo completo de anuncio publicitario</div>
+                <div class="timeline__company" data-i18n="about.exp.c2">Escuela de formación laboral (ESCALA)</div>
+              </div>
+            </div>
+
+            <div class="timeline__item">
+              <div class="timeline__year">2023 — 2025</div>
+              <div>
+                <div class="timeline__role" data-i18n="about.exp.r3">Ciclo Formativo de Grado Superior</div>
+                <div class="timeline__company" data-i18n="about.exp.c3">Animaciones 3D, Juegos y Entornos Interactivos · UDIT</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="about__divider"></div>
+
+          <!-- Interests -->
+          <div>
+            <div class="section-eyebrow" style="margin-bottom:1.25rem;">
+              <span class="t-label" data-i18n="about.interests">Intereses</span>
+            </div>
+            <div class="software-list">
+              <span class="sw-tag">Retro gaming</span>
+              <span class="sw-tag" data-i18n="about.tag.emulation">PS3 / Emulación</span>
+              <span class="sw-tag">Worldbuilding</span>
+              <span class="sw-tag">Concept Art</span>
+              <span class="sw-tag">Open source</span>
+              <span class="sw-tag">Pixel art</span>
+              <span class="sw-tag" data-i18n="about.tag.audio">Síntesis de audio</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

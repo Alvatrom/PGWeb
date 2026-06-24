@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álvaro Gómez Expósito — Portfolio 3D · Arte Digital · Games</title>
+  <meta name="description" content="Portfolio de Álvaro Gómez Expósito, generalista 3D, artista digital y desarrollador de videojuegos indie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --accent:     #c8832a;
+      --accent-dim: rgba(200,131,42,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page">
+
+    <!-- HERO ─────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+
+          <div class="hero__copy">
+            <p class="hero__tag fade-up" data-i18n="hero.tag">Generalista 3D · VFX · Producción Audiovisual</p>
+            <h1 class="hero__title fade-up delay-1" data-i18n="hero.title">Álvaro Gómez<br><em>Expósito</em></h1>
+            <p class="hero__subtitle fade-up delay-2" data-i18n="hero.subtitle">
+              Generalista 3D especializado en modelado orgánico, efectos visuales y producción audiovisual. De la idea a la imagen final.
+            </p>
+            <div class="hero__cta fade-up delay-3">
+              <a href="projects.html" class="btn btn--primary" data-i18n="hero.cta1">Ver proyectos</a>
+              <a href="assets/documents/CV/CV_ALVARO_GOMEZ_2026.pdf" class="btn btn--outline" download data-i18n="hero.cta2">CV</a>
+            </div>
+
+            <div class="hero__stats fade-up delay-4">
+              <div>
+                <div class="hero__stat-num">20+</div>
+                <div class="hero__stat-label" data-i18n="hero.stat1">Proyectos</div>
+              </div>
+              <div>
+                <div class="hero__stat-num">3+</div>
+                <div class="hero__stat-label" data-i18n="hero.stat2">Años exp.</div>
+              </div>
+              <div>
+                <div class="hero__stat-num">10+</div>
+                <div class="hero__stat-label" data-i18n="hero.stat3">Herramientas</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual fade-up delay-2">
+            <a class="hero__img-wrap hero__slideshow" id="heroSlideLink" href="projects.html?open=0">
+
+              <div class="hero__slide hero__slide--active" data-idx="0">
+                <div class="hero__slide-blur" style="background-image:url('assets/img/exposicion-vivienda/Artstation.webp')"></div>
+                <img src="assets/img/exposicion-vivienda/Artstation.webp" alt="Exposición de Vivienda" style="object-fit:contain; position:relative;">
+              </div>
+
+              <div class="hero__slide" data-idx="1">
+                <div class="hero__slide-blur" style="background-image:url('assets/img/nuka-cola/PruebaPortada.webp')"></div>
+                <img src="assets/img/nuka-cola/PruebaPortada.webp" alt="Nuka-Cola: Holiday Spirit Never Ends" style="object-fit:contain; position:relative;">
+              </div>
+
+              <div class="hero__slide" data-idx="2">
+                <div class="hero__slide-blur" style="background-image:url('assets/img/escala-anuncio/MiniaturaYoutube.webp')"></div>
+                <img src="assets/img/escala-anuncio/MiniaturaYoutube.webp" alt="Anuncio Educativo ESCALA" style="object-fit:contain; position:relative;">
+              </div>
+
+              <div class="hero__slide" data-idx="3">
+                <img src="assets/img/dettlaff-fanart/render_Viewport_001.webp" alt="Dettlaff — Fan Art">
+              </div>
+
+              <div class="hero__slide" data-idx="4">
+                <div class="hero__slide-blur" style="background-image:url('assets/img/anuncio-canon/alvaro-gomez-4mejora.webp')"></div>
+                <img src="assets/img/anuncio-canon/alvaro-gomez-4mejora.webp" alt="Anuncio Conceptual Canon" style="object-fit:contain; position:relative;">
+              </div>
+
+              <div class="hero__slide-caption">
+                <div>
+                  <div class="hero__slide-caption__cat" id="heroSlideCat">3D / Arquitectura</div>
+                  <div class="hero__slide-caption__name" id="heroSlideName">Exposición de Vivienda</div>
+                </div>
+                <div class="hero__slide-dots" id="heroSlideDots">
+                  <span class="hero__slide-dot hero__slide-dot--active" data-slide="0" aria-label="Proyecto 1"></span>
+                  <span class="hero__slide-dot" data-slide="1" aria-label="Proyecto 2"></span>
+                  <span class="hero__slide-dot" data-slide="2" aria-label="Proyecto 3"></span>
+                  <span class="hero__slide-dot" data-slide="3" aria-label="Proyecto 4"></span>
+                  <span class="hero__slide-dot" data-slide="4" aria-label="Proyecto 5"></span>
+                </div>
+              </div>
+
+              <div class="hero__slide-bar">
+                <div class="hero__slide-bar__fill" id="heroProgressFill"></div>
+              </div>
+
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT WORK ──────────────────────────────────────── -->
+    <section class="recent">
+      <div class="container">
+        <div class="section-eyebrow">
+          <span class="t-label" data-i18n="hero.recent">Trabajos recientes</span>
+        </div>
+
+        <div class="recent__grid">
+
+          <!-- Proyecto 1 — Exposición de Vivienda -->
+          <a href="projects.html?open=0" class="recent__item">
+            <img src="assets/img/exposicion-vivienda/Artstation.webp" alt="Exposición de Vivienda" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="recent__item__overlay">
+              <div>
+                <div class="recent__item__cat">3D / Arquitectura</div>
+                <div class="recent__item__name">Exposición de Vivienda</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 2 — Nuka-Cola: Holiday Spirit Never Ends -->
+          <a href="projects.html?open=1" class="recent__item">
+            <div style="position:absolute;inset:0;background:url('assets/img/nuka-cola/PruebaPortada.webp') center/cover;filter:blur(18px) brightness(0.35);transform:scale(1.08);"></div>
+            <img src="assets/img/nuka-cola/PruebaPortada.webp" alt="Nuka-Cola: Holiday Spirit Never Ends" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;">
+            <div class="recent__item__overlay">
+              <div>
+                <div class="recent__item__cat">Arte Digital / Fan Art</div>
+                <div class="recent__item__name">Nuka-Cola: Holiday Spirit Never Ends</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 3 — Anuncio Educativo ESCALA -->
+          <a href="projects.html?open=2" class="recent__item">
+            <div style="position:absolute;inset:0;background:url('assets/img/escala-anuncio/MiniaturaYoutube.webp') center/cover;filter:blur(18px) brightness(0.35);transform:scale(1.08);"></div>
+            <img src="assets/img/escala-anuncio/MiniaturaYoutube.webp" alt="Anuncio Educativo ESCALA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;">
+            <div class="recent__item__overlay">
+              <div>
+                <div class="recent__item__cat">3D / Motion</div>
+                <div class="recent__item__name">Anuncio Educativo ESCALA</div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

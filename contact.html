@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Álvaro Gómez Expósito</title>
+  <meta name="description" content="Contacta con Álvaro Gómez Expósito para proyectos freelance, colaboraciones o nuevas oportunidades.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --accent:     #4a9eff;
+      --accent-dim: rgba(74,158,255,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page contact-page">
+    <div class="container">
+
+      <div class="section-eyebrow">
+        <span class="t-label" data-i18n="contact.eyebrow">Hablemos</span>
+      </div>
+      <h1 class="t-h1 fade-up" data-i18n="contact.title">Contacto</h1>
+      <p class="fade-up delay-1" style="color:var(--muted);margin-top:.75rem;font-size:1.05rem;max-width:50ch;" data-i18n="contact.sub">
+        Disponible para proyectos freelance, colaboraciones y nuevas oportunidades.
+      </p>
+
+      <div class="contact-grid">
+
+        <!-- Info column -->
+        <div class="contact__info fade-up delay-1">
+
+          <div class="contact__links">
+
+            <a href="mailto:alvarogomez0402@gmail.com" class="contact__link">
+              <span class="contact__link__icon">✉</span>
+              <div>
+                <div class="contact__link__label">Email</div>
+                <div class="contact__link__val">alvarogomez0402@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/alvaro-gomez-exposito-3d" target="_blank" rel="noopener" class="contact__link">
+              <span class="contact__link__icon"><img src="assets/img/logos/Linkedin.png" alt="LinkedIn"></span>
+              <div>
+                <div class="contact__link__label">LinkedIn</div>
+                <div class="contact__link__val">linkedin.com/in/alvaro-gomez-exposito-3d</div>
+              </div>
+            </a>
+
+            <a href="https://alvatrom.artstation.com/" target="_blank" rel="noopener" class="contact__link">
+              <span class="contact__link__icon"><img src="assets/img/logos/ArtstationLogo.png" alt="ArtStation"></span>
+              <div>
+                <div class="contact__link__label">ArtStation</div>
+                <div class="contact__link__val">alvatrom.artstation.com</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/Alvatrom" target="_blank" rel="noopener" class="contact__link">
+              <span class="contact__link__icon" style="font-family:var(--font-mono);font-size:.8rem;">GH</span>
+              <div>
+                <div class="contact__link__label">GitHub</div>
+                <div class="contact__link__val">github.com/Alvatrom</div>
+              </div>
+            </a>
+
+            <a href="assets/documents/CV/CV_ALVARO_GOMEZ_2026.pdf" class="contact__link" download>
+              <span class="contact__link__icon">↓</span>
+              <div>
+                <div class="contact__link__label">CV</div>
+                <div class="contact__link__val" data-i18n="contact.cv.val">Descargar CV (PDF)</div>
+              </div>
+            </a>
+
+          </div>
+
+          <div style="margin-top:2.5rem;padding:1.25rem;border:1px solid var(--bg-line);border-radius:var(--radius);">
+            <div class="t-label" style="margin-bottom:.5rem;" data-i18n="contact.availability">Disponibilidad</div>
+            <div style="display:flex;align-items:center;gap:.5rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,.5);flex-shrink:0;"></span>
+              <span style="font-size:.85rem;color:var(--text);" data-i18n="contact.available">Disponible para proyectos</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Form column -->
+        <div class="fade-up delay-2">
+          <form class="contact__form" id="contactForm" novalidate>
+
+            <div class="form-group">
+              <label for="name" data-i18n="contact.name">Nombre</label>
+              <input type="text" id="name" name="name" data-i18n-placeholder="contact.name" placeholder="Nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="contact.email">Email</label>
+              <input type="email" id="email" name="email" data-i18n-placeholder="contact.email.placeholder" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="msg" data-i18n="contact.msg">Mensaje</label>
+              <textarea id="msg" name="msg" data-i18n-placeholder="contact.msg" placeholder="Cuéntame tu proyecto..." required></textarea>
+            </div>
+
+            <div id="formSuccess" class="form-success" data-i18n="contact.success">
+              Mensaje enviado. ¡Te contesto pronto!
+            </div>
+
+            <button type="submit" class="btn btn--primary" data-i18n="contact.send">
+              Enviar mensaje →
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
