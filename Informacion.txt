@@ -1,6 +1,6 @@
 PORTFOLIO WEB — Documento de referencia
 
-Álvaro Gómez Expósito · Actualizado: junio 2026
+Álvaro Gómez Expósito · Actualizado: junio 2026 (sesión 2)
 
 1. INFORMACIÓN DEL PROYECTO
 
@@ -87,12 +87,12 @@ Proyecto 1 — Exposición de Vivienda · Corona Renderer  (3D / Arquitectura)
 
 Proyecto 2 — Nuka-Cola: Holiday Spirit Never Ends  (Arte Digital / Fan Art)
   Carpeta img: assets/img/nuka-cola/
-  Miniatura: PruebaPortada.jpg (con fondo desenfocado, object-fit:contain)
+  Miniatura: PruebaPortada.webp (con fondo desenfocado, object-fit:contain)
   Galería (11 elementos + 2 YouTube):
     1. YouTube: VideoFinalCompletoSinAOVs (https://www.youtube.com/embed/8iklpx8p0uQ) vol:0.85
     2–9. QuantumFoto · Quartz · Dark · Orange · Cherry · Victory · Grape · Wild
-    10. FotoBotella.jpg
-    11. PruebaPortada.jpg
+    10. FotoBotella.webp
+    11. PruebaPortada.webp
     12. YouTube: FinalbotellaYoutube (https://www.youtube.com/embed/AIykxyigyug) vol:0.7
     13. YouTube: VideoFinalSimulacion (https://www.youtube.com/embed/ngqnVsMbMiE) vol:0.7
   Subtítulo: 3ds Max · Arnold Renderer · TyFlow · ZBrush · After Effects (#c9a87c)
@@ -100,7 +100,7 @@ Proyecto 2 — Nuka-Cola: Holiday Spirit Never Ends  (Arte Digital / Fan Art)
 
 Proyecto 3 — Anuncio Educativo ESCALA  (3D / Motion)
   Carpeta: assets/img/escala-anuncio/
-  Miniatura: MiniaturaYoutube.png (con fondo desenfocado, object-fit:contain)
+  Miniatura: MiniaturaYoutube.webp (con fondo desenfocado, object-fit:contain)
   Galería (9 imgs + 1 YouTube): RenderPrincipalMejorado, RenderArbustos, Columnas,
                     RenderCables, ExplosionInicio, ExplosionParticulas, Explosion2,
                     EdificioProcedural, AssetsEdificio,
@@ -144,27 +144,27 @@ Comportamiento:
 
 Slides (en orden):
   Slide 1 — Exposición de Vivienda  →  projects.html?open=0
-    img:    assets/img/exposicion-vivienda/Artstation.png
+    img:    assets/img/exposicion-vivienda/Artstation.webp
     modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
     cat ES/EN: 3D / Arquitectura · 3D / Architecture
 
   Slide 2 — Nuka-Cola: Holiday Spirit Never Ends  →  projects.html?open=1
-    img:    assets/img/nuka-cola/PruebaPortada.jpg  (archivo nº 11 de la galería)
+    img:    assets/img/nuka-cola/PruebaPortada.webp  (archivo nº 11 de la galería)
     modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
     cat ES/EN: Arte Digital / Fan Art · Digital Art / Fan Art
 
   Slide 3 — Anuncio Educativo ESCALA  →  projects.html?open=2
-    img:    assets/img/escala-anuncio/MiniaturaYoutube.png
+    img:    assets/img/escala-anuncio/MiniaturaYoutube.webp
     modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
     cat ES/EN: 3D / Motion · 3D / Motion
 
   Slide 4 — Dettlaff — Fan Art  →  projects.html?open=3
-    img:    assets/img/dettlaff-fanart/render_Viewport_001.png
+    img:    assets/img/dettlaff-fanart/render_Viewport_001.webp
     modo:   object-fit:cover (sin espacios vacíos, sin blur)
     cat ES/EN: Arte Digital / Fan Art · Digital Art / Fan Art
 
   Slide 5 — Anuncio Conceptual Canon  →  projects.html?open=4
-    img:    assets/img/anuncio-canon/alvaro-gomez-4mejora.jpg  (archivo nº 4 de la galería)
+    img:    assets/img/anuncio-canon/alvaro-gomez-4mejora.webp  (archivo nº 4 de la galería)
     modo:   object-fit:contain + fondo blur (hero__slide-blur) + position:relative en img
     cat ES/EN: 3D / Motion · 3D / Motion
 
@@ -183,15 +183,15 @@ Muestra los 3 primeros proyectos de projects.html con imagen real de portada.
 Cada tarjeta enlaza a projects.html?open=N (N = posición 0-based) para abrir el modal directo.
 
   Tarjeta 1 → Exposición de Vivienda
-    img: assets/img/exposicion-vivienda/Artstation.png  (object-fit:cover)
+    img: assets/img/exposicion-vivienda/Artstation.webp  (object-fit:cover)
     href: projects.html?open=0
 
   Tarjeta 2 → Nuka-Cola: Holiday Spirit Never Ends
-    img: assets/img/nuka-cola/PruebaPortada.jpg  (fondo blur + object-fit:contain)
+    img: assets/img/nuka-cola/PruebaPortada.webp  (fondo blur + object-fit:contain)
     href: projects.html?open=1
 
   Tarjeta 3 → Anuncio Educativo ESCALA
-    img: assets/img/escala-anuncio/MiniaturaYoutube.png  (fondo blur + object-fit:contain)
+    img: assets/img/escala-anuncio/MiniaturaYoutube.webp  (fondo blur + object-fit:contain)
     href: projects.html?open=2
 
 
@@ -206,15 +206,18 @@ Cada tarjeta enlaza a projects.html?open=N (N = posición 0-based) para abrir el
 
 assets/
 ├── img/
-│   ├── exposicion-vivienda/   (6 imágenes .png)
-│   ├── escala-anuncio/        (10 archivos: 9 galería + 1 miniatura YouTube)
-│   ├── anuncio-canon/         (4 imágenes .jpg)
-│   ├── dettlaff-fanart/       (3 imágenes .png: 2 renders + hoja de referencias)
-│   ├── nuka-cola/             (10 imágenes .jpg: QuantumFoto, Quartz, Dark, Orange,
+│   ├── exposicion-vivienda/   (6 imágenes .webp + originales .png)
+│   ├── escala-anuncio/        (10 archivos .webp + originales: 9 galería + 1 miniatura YouTube)
+│   ├── anuncio-canon/         (4 imágenes .webp + originales .jpg)
+│   ├── dettlaff-fanart/       (3 imágenes .webp + originales .png: 2 renders + hoja de referencias)
+│   ├── nuka-cola/             (10 imágenes .webp + originales .jpg: QuantumFoto, Quartz, Dark, Orange,
 │   │                           Cherry, Victory, Grape, Wild, FotoBotella, PruebaPortada)
 │   ├── me/                    (foto personal: alvaro nuevo.jpg)
 │   └── logos/                 (logos de programas con fondo transparente, .png y .webp)
 │                              tyflow_icon, zbrush_icon, Unity_Logo → clase logo-white (filtro blanco)
+│
+│   NOTA: Todos los HTML usan las versiones .webp de las imágenes de proyectos.
+│   Los originales .png/.jpg se conservan en las mismas carpetas.
 ├── videos/
 │   ├── escala-anuncio/        LetrasBlancas.mp4 (archivo local; en web se usa YouTube embed)
 │   ├── anuncio-canon/         ComposicionFinalPresentacion.mp4 (archivo local; en web se usa YouTube embed)
@@ -225,11 +228,13 @@ assets/
     └── CV/                    CV_ALVARO_GOMEZ_2026.pdf ✓
 
 Para añadir imágenes a un proyecto:
-1. Colocar los archivos PNG/JPG en su carpeta correspondiente (assets/img/<proyecto>/)
+1. Colocar los archivos .webp en su carpeta correspondiente (assets/img/<proyecto>/)
 2. Los vídeos van en assets/videos/<proyecto>/ o como enlaces YouTube embed
 3. Añadir data-img="ruta" y data-gallery="ruta1,ruta2,..." al div .project-item
 4. Para YouTube: usar URL https://www.youtube.com/embed/VIDEO_ID (con |vol:0.X opcional)
 5. Para miniatura con fondo desenfocado: añadir div.hero__slide-blur + img con object-fit:contain + position:relative
+6. Añadir data-download-links="url1,url2,..." con una URL de Google Drive por entrada de galería
+   (cadena vacía para entradas YouTube/vídeo, URL real para imágenes)
 
 
 10. SECCIONES DE HABILIDADES EN skills.html
@@ -329,6 +334,25 @@ Completado:
 Pendiente:
   ▸ Integrar formulario de contacto con servicio real (Formspree / Web3Forms)
   ▸ Subir a Netlify / dominio propio
+
+Novedades sesión 2 (junio 2026):
+  ✓ Todas las imágenes de proyectos migradas a .webp en index.html y projects.html
+      (escala-anuncio, exposicion-vivienda, dettlaff-fanart, anuncio-canon, nuka-cola)
+  ✓ Botón de descarga por imagen en la galería del modal
+      — Posición: inferior central sobre la imagen (position:absolute, bottom:0.75rem, left:50%)
+      — Solo aparece en imágenes; nunca en entradas YouTube ni vídeo
+      — Icono SVG de descarga + texto "Descargar" / "Download" según idioma
+      — Traducción bilingüe: clave gallery.download en TRANSLATIONS (main.js)
+      — refreshModalText() actualiza el texto del botón al cambiar idioma sin re-renderizar galería
+      — Implementado en renderGallery() via atributo data-download-links del .project-item
+      — CSS: clase .gallery__download (backdrop-filter, hover dorado, transición)
+  ✓ Enlaces de Google Drive asignados a todos los proyectos en data-download-links:
+      Exposición de Vivienda → 6 imágenes
+      Dettlaff Fan Art       → 3 imágenes  (YouTube sin botón)
+      Nuka-Cola              → 10 imágenes (YouTube en idx 0, 11, 12 sin botón)
+      Anuncio ESCALA         → 9 imágenes  (YouTube en idx 9 sin botón)
+      Anuncio Canon          → 4 imágenes  (YouTube en idx 4 sin botón)
+  ✓ Repositorio git eliminado (.git borrado); el proyecto ya no tiene historial de versiones
 
 
 15. CÓMO RETOMAR EL TRABAJO
