@@ -520,6 +520,36 @@ function initModal() {
     if (v) v.pause();
   }
 
+  // ── Swipe táctil en galería del modal ───────────────────────
+  const galleryMediaEl = overlay.querySelector('.modal__media');
+  let swipeStartX = 0;
+  galleryMediaEl.addEventListener('touchstart', e => {
+    swipeStartX = e.touches[0].clientX;
+  }, { passive: true });
+  galleryMediaEl.addEventListener('touchend', e => {
+    if (!galleryState) return;
+    const dx = e.changedTouches[0].clientX - swipeStartX;
+    if (Math.abs(dx) < 50) return;
+    const title = overlay.querySelector('.modal__title').textContent;
+    galleryState.idx = dx < 0
+      ? (galleryState.idx + 1) % galleryState.imgs.length
+      : (galleryState.idx - 1 + galleryState.imgs.length) % galleryState.imgs.length;
+    renderGallery(galleryMediaEl, galleryState.imgs, galleryState.idx, title);
+  }, { passive: true });
+
+  // ── Swipe táctil en visor fullscreen ────────────────────────
+  if (fullscreenEl) {
+    let fsTouchX = 0;
+    fullscreenEl.addEventListener('touchstart', e => {
+      fsTouchX = e.touches[0].clientX;
+    }, { passive: true });
+    fullscreenEl.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - fsTouchX;
+      if (Math.abs(dx) < 50) return;
+      dx < 0 ? navigateFullscreen(1) : navigateFullscreen(-1);
+    }, { passive: true });
+  }
+
   items.forEach(item => {
     item.addEventListener('click', () => openModal(item));
     item.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(item); });

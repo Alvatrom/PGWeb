@@ -1,6 +1,6 @@
 PORTFOLIO WEB — Documento de referencia
 
-Álvaro Gómez Expósito · Actualizado: junio 2026 (sesión 2)
+Álvaro Gómez Expósito · Actualizado: junio 2026 (sesión 4)
 
 1. INFORMACIÓN DEL PROYECTO
 
@@ -73,7 +73,26 @@ Footer compartido inyectado via js/layout.js — links correctos: ArtStation · 
 Links del footer: alvatrom.artstation.com · github.com/Alvatrom · linkedin.com/in/alvaro-gomez-exposito-3d
 Indicador de disponibilidad (punto verde animado) en contact.html
 Responsive: adaptado a móvil y tablet (hero visual oculto en <900px)
+Carrusel horizontal de proyectos en móvil/tablet (≤768px): deslizamiento lateral con CSS scroll-snap
+  - Scroll-snap nativo del navegador (sin librerías externas)
+  - Puntos indicadores (dots) bajo la lista, sincronizados con el scroll
+  - Los dots se reconstruyen al filtrar por categoría y el scroll vuelve al inicio
+  - Clic en dot → scroll animado al proyecto correspondiente
+  - Función: initProjectSwipe() en js/main.js · Elemento: <div id="swipeDots"> en projects.html
+  - Clases CSS: .projects-swipe-dots · .projects-swipe-dot · .projects-swipe-dot--active
+Swipe táctil en galería del modal (navegación entre archivos del proyecto)
+  - Deslizar izquierda → siguiente imagen/vídeo; deslizar derecha → anterior
+  - Umbral de activación: 50px (los taps normales no activan la navegación)
+  - Listeners sobre el elemento .modal__media (persisten entre re-renders de galería)
+  - Compatible con las flechas ‹ › y las teclas ← → ya existentes
+  - Implementado en initModal() con touchstart + touchend { passive: true }
+Swipe táctil en visor fullscreen
+  - Misma lógica: deslizar izquierda → siguiente; derecha → anterior
+  - Llama a navigateFullscreen(±1) con umbral 50px
 Botón de cerrar modal (✕) en color gris azulado frío #b0c4d8 para mayor visibilidad
+Analytics Umami integrado en los 5 HTML
+  - Script: <script defer src="https://cloud.umami.is/script.js" data-website-id="84b20424-426c-4b66-8ffb-ea98c5c36936">
+  - Añadido justo antes del </head> en: index.html · about.html · contact.html · projects.html · skills.html
 
 
 5. PROYECTOS EN projects.html  (orden actual)
@@ -330,10 +349,29 @@ Completado:
   ✓ CV funcional: assets/documents/CV/CV_ALVARO_GOMEZ_2026.pdf (enlace correcto en index.html y contact.html)
   ✓ Stat "Herramientas" actualizado a 10+
   ✓ Traducciones ES/EN completas en todas las secciones
+  ✓ Analytics Umami integrado en los 5 HTML (script defer en <head>)
+  ✓ Carrusel horizontal en projects.html para móvil/tablet (scroll-snap + dots)
+  ✓ Swipe táctil en galería del modal (navegar entre archivos de cada proyecto)
+  ✓ Swipe táctil en visor fullscreen
 
 Pendiente:
   ▸ Integrar formulario de contacto con servicio real (Formspree / Web3Forms)
   ▸ Subir a Netlify / dominio propio
+
+Novedades sesión 4 (junio 2026):
+  ✓ Swipe táctil en galería del modal — navegar entre imágenes/vídeos de cada proyecto deslizando
+      — touchstart + touchend sobre .modal__media; umbral 50px; passive:true
+      — Izquierda → siguiente · Derecha → anterior
+      — Compatible con flechas ‹ › y teclas ← → (no las reemplaza, las complementa)
+  ✓ Swipe táctil en visor fullscreen — mismo comportamiento, llama a navigateFullscreen(±1)
+
+Novedades sesión 3 (junio 2026):
+  ✓ Analytics Umami añadido al <head> de los 5 HTML
+      — data-website-id: 84b20424-426c-4b66-8ffb-ea98c5c36936
+  ✓ Carrusel horizontal en projects.html para móvil/tablet (≤768px)
+      — CSS: flex-direction:row + overflow-x:auto + scroll-snap-type:x mandatory en .project-list
+      — .project-item: flex:0 0 100% + scroll-snap-align:start + scroll-snap-stop:always
+      — Scrollbar oculto; dots indicadores sincronizados con scroll y filtro de categorías
 
 Novedades sesión 2 (junio 2026):
   ✓ Todas las imágenes de proyectos migradas a .webp en index.html y projects.html
